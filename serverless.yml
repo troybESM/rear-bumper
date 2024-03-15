@@ -8,7 +8,7 @@ params:
     ENABLE_TIME_TRIGGER: false
   default:
     # This is mostly an example of how to use params for envs
-    DEMO_BUCKET: dev-sbx
+    DEMO_BUCKET: ${aws:accountId}.serverless.${self:provider.region}.deploys
     ENABLE_TIME_TRIGGER: false
 
 #Config and Default Lambda Settings
@@ -18,7 +18,7 @@ provider:
   stage: ${opt:stage, 'dev'} # The github actions pipeline will pass the branch name as the stage
   region: ${opt:region, 'us-east-2'}
   deploymentBucket:
-    name: dev-sbx
+    name: ${aws:accountId}.serverless.${self:provider.region}.deploys
   timeout: 29
   memorySize: 256
   stackTags:
