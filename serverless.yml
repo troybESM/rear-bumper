@@ -151,7 +151,7 @@ functions:
     description: This function is an example on how to trigger off of files being written to s3
     events:
       - s3:
-          bucket: as-dev-sbx
+          bucket: ${param:DEMO_BUCKET}
           existing: true
           forceDeploy: true
           rules:
@@ -227,7 +227,7 @@ functions:
             detail:
               bucket:
                 name:
-                  - as-dev-sbx # This bucket needs to have event bridge notifications turned on.
+                  - ${param:DEMO_BUCKET}
               object:
                 key:
                   - prefix: ${self:provider.stage}/demo/uploads/
