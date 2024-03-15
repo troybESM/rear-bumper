@@ -5,7 +5,7 @@ params:
   dev:
     ENABLE_TIME_TRIGGER: false
   prod:
-    ENABLE_TIME_TRIGGER: true
+    ENABLE_TIME_TRIGGER: false
   default:
     # This is mostly an example of how to use params for envs
     DEMO_BUCKET: dev-sbx
