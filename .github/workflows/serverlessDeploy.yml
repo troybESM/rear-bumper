@@ -57,4 +57,4 @@ jobs:
           echo "STAGE=$BRANCH" >> "$GITHUB_ENV"
         # echo "::set-env name=STAGE::$BRANCH"
       - name: Serverless Deploy
-        run: npx serverless deploy --stage dev-$STAGE
+        run: npx serverless deploy --stage dev-$STAGE --conceal --aws-s3-accelerate
